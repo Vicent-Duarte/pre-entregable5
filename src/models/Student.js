@@ -17,7 +17,7 @@ const Student = sequelize.define('student', {
     program: {
         type: DataTypes.STRING,
         allowNull: false
-    },
+    }
 });
 
 module.exports = Student;

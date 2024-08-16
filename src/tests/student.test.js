@@ -8,14 +8,14 @@ let studentId;
 const student = {
     firstName: "Vicent",
     lastName: "Duarte",
-    birthday: '2000/01/20',
+    birthday: '2000-01-20',
     program: 'Development'
 };
 
 test("POST -> BASE_URL, should return statusCode 201, and res.body.firstName === student.firstName", async() => {
     const res = await request(app)
-    .post(BASE_URL)
-    .send(student)
+        .post(BASE_URL)
+        .send(student)
     
     studentId = res.body.id
     expect(res.status).toBe(201)
@@ -46,7 +46,7 @@ test("PUT -> BASE_URL/studentId, should return statusCode 200, and res.body.firs
     };
     const res = await request(app)
     .put(`${BASE_URL}/${studentId}`)
-    .send(studentUpdate.firstName)
+    .send(studentUpdate)
     
     expect(res.statusCode).toBe(200)
     expect(res.body).toBeDefined()
