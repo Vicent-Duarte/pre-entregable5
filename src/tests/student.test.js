@@ -30,6 +30,9 @@ test("GET -> BASE_URL, should return statusCode 200, and res.body.length === 1",
     expect(res.statusCode).toBe(200)
     expect(res.body).toBeDefined()
     expect(res.body).toHaveLength(1)
+
+    expect(res.body[0].courses).toBeDefined()
+    expect(res.body[0].courses).toHaveLength(0)
 });
 
 test("GET -> BASE_URL/studentId, should return statusCode 200, and res.body.firstName === student.firstName", async() => {
@@ -39,6 +42,9 @@ test("GET -> BASE_URL/studentId, should return statusCode 200, and res.body.firs
     expect(res.statusCode).toBe(200)
     expect(res.body).toBeDefined()
     expect(res.body.firstName).toBe(student.firstName)
+
+    expect(res.body.courses).toBeDefined()
+    expect(res.body.courses).toHaveLength(0)
 })
 test("PUT -> BASE_URL/studentId, should return statusCode 200, and res.body.firstName === studentUpdate.firstName", async() => {
     const studentUpdate = {
