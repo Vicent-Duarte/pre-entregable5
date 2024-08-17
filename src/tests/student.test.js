@@ -4,7 +4,6 @@ const app = require ('../app');
 const BASE_URL = '/api/v1/students';
 let studentId;
 
-
 const student = {
     firstName: "Vicent",
     lastName: "Duarte",
